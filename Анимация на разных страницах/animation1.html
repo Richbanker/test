@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100vw;
+height: 100vh;
+flex-direction: column;
+}
+
+.jpg{
+width: 15vw;
+height: 15vh;
+opacity: 0;
+background-image:url("paper_plane_PNG79.png") ;
+background-size:contain ;
+background-position: center ;
+background-repeat: no-repeat;
+
+}
+#animated{
+opacity: 1;
+animation: fly 2s linear ;
+
+}
+@keyframes fly {
+
+0%{transform: translate(0,-10vh);}
+25%{transform: translate(10vw,-10vh);}
+100%{transform: translate(50vw,-50vh);
+
+}
+
+}
+
+#popup{
+display: flex;
+width: 40vw;
+height:20vh ;
+background-color: burlywood;
+animation: up 2.5s ease-out ;
+border-radius: 3vw;
+
+justify-content: center;
+align-items: center;
+
+}
+
+@keyframes up {
+
+0%{transform: translateY(-5vh);}
+100%{transform: translateY( -calc(50vh - 20vh));}
+
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jpg" st></div>
+    <input class="login"></input>
+    <input class="pasword"></input>
+   
+</div>
+
+<script>
+    var x = document.querySelector(".login");
+    var z = document.querySelector(".pasword");
+    var j = document.querySelector(".jpg");
+    
+    z.addEventListener("keydown", (event) => {
+
+        if (event.key === "Enter") {
+            if(x.value==="Илья" && z.value==="123")
+            {  j.id = "animated";
+            console.log("Сработало");  
+            setTimeout(() => {
+                j.removeAttribute("id");
+                console.log("ID удален  ");
+window.open("animation2.html")
+
+
+            }, 2000); }
+          else{var n = document.createElement("div")}
+n.id="popup"
+var container = document.querySelector(".container")
+n.textContent="Данные не верны"
+container.appendChild(n)
+setTimeout(() => {
+                container.removeChild(n);
+                console.log("ID удален  ");
+            }, 2000); }
+
+
+
+    
+           
+        }
+    );
+    
+    </script>
+</body>
+</html>

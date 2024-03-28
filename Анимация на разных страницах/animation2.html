@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.container{
+display: flex;
+align-items:start;
+justify-content:left;
+width: 100vw;
+height: 100vh;
+flex-direction: column;
+}
+
+.jpg{
+width: 15vw;
+height: 15vh;
+opacity: 0;
+background-image:url("paper_plane_PNG79.png") ;
+background-size:contain ;
+background-position: center ;
+background-repeat: no-repeat;
+
+}
+#animated{
+opacity: 1;
+animation: fly 2s linear ;
+
+}
+@keyframes fly  {
+  
+
+    0%{transform: translate(0, 10vh);}
+25%{transform: translate(10vw, 10vh);}
+50%{transform: translate(50vw, 50vh);}
+100%{transform: translate(50vw, 50vh);}
+}
+  /*  0% {
+        transform: translate(-25%, -25%);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="jpg" st></div>
+    
+   
+</div>
+
+<script>
+/*var x = document.querySelector(".login");
+var z = document.querySelector(".pasword");*/
+var j = document.querySelector(".jpg");
+document.addEventListener("DOMContentLoaded",()=>{j.id="animated"
+ setTimeout(() => {
+            j.removeAttribute("id");
+            console.log("ID удален  ");
+        window.location.href="https://vimeo.com/17710250"
+        },
+        
+        2000); 
+
+
+}) 
+/*z.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        j.id = "animated";
+        console.log("Сработало");
+
+        
+    }
+});*/
+
+</script>
+</body>
+</html>
